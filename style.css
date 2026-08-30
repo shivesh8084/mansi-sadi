@@ -1,0 +1,1879 @@
+/* ==========================================
+   WEDDING INVITATION
+   MANSI & DR. NISHU
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #180006;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.phone-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #500d14 0%,
+            #260006 45%,
+            #120003 100%
+        );
+
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   WELCOME SCREEN
+   GANESH JI BACKGROUND
+========================================== */
+
+.welcome-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    /*
+       IMPORTANT:
+
+       ganeshji.jpeg ko index.html ke
+       same folder me rakhein.
+    */
+
+    background-image:
+        url("ganeshji.jpeg");
+
+    background-size: cover;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease,
+        transform 1s ease;
+}
+
+
+/* ==========================================
+   DARK OVERLAY
+========================================== */
+
+.welcome-dark-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(30, 0, 5, .42),
+            rgba(50, 0, 8, .28),
+            rgba(20, 0, 4, .62)
+        );
+
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   GOLD BORDER
+========================================== */
+
+.welcome-overlay::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 20px;
+
+    z-index: 3;
+
+    border: 1px solid
+        rgba(230, 180, 70, .65);
+
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   OPEN ANIMATION
+========================================== */
+
+.welcome-overlay.opened {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(1.08);
+
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   WELCOME CONTENT
+========================================== */
+
+.welcome-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 500px;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    /*
+       Content ke peeche halka dark glow
+    */
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(40, 0, 6, .40),
+            rgba(20, 0, 3, .08)
+        );
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,.9);
+}
+
+
+/* ==========================================
+   GOD TEXT
+========================================== */
+
+.god-text {
+
+    font-family: "Cinzel", serif;
+
+    color: #f4ce67;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 2px 8px #250006;
+}
+
+
+/* ==========================================
+   WEBSITE TAG
+========================================== */
+
+.website-tag {
+
+    font-family: "Marcellus", serif;
+
+    color: #fff;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    font-weight: 400;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,.95);
+}
+
+
+/* ==========================================
+   COUPLE NAME
+========================================== */
+
+.welcome-couple {
+
+    font-family: "Cinzel", serif;
+
+    color: #f1c454;
+
+    font-size: 42px;
+
+    line-height: 1.25;
+
+    text-shadow:
+        0 2px 5px #250006,
+        0 0 15px rgba(0,0,0,.9);
+}
+
+
+.welcome-couple span {
+
+    display: block;
+
+    color: #fff;
+
+    font-family: cursive;
+
+    font-size: 25px;
+
+    margin: 5px 0;
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,.95);
+}
+
+
+/* ==========================================
+   ORNAMENT
+========================================== */
+
+.ornament {
+
+    color: #d9a93f;
+
+    letter-spacing: 8px;
+
+    margin: 20px 0;
+}
+
+
+/* ==========================================
+   TAP TO OPEN
+========================================== */
+
+.tap-open-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 14px 30px;
+
+    border: 1px solid #e6b84b;
+
+    border-radius: 30px;
+
+    background:
+        rgba(45, 2, 8, .82);
+
+    color: #f5cc67;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.45);
+
+    animation:
+        pulseButton 2s infinite;
+}
+
+
+.tap-hint {
+
+    margin-top: 18px;
+
+    color: rgba(255,255,255,.88);
+
+    font-size: 12px;
+
+    text-shadow:
+        0 2px 7px rgba(0,0,0,1);
+}
+
+
+@keyframes pulseButton {
+
+    0%, 100% {
+
+        box-shadow:
+            0 0 0 rgba(226,177,65,0);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 0 25px rgba(226,177,65,.45);
+
+    }
+}
+
+
+/* ==========================================
+   MUSIC
+========================================== */
+
+.music-btn {
+
+    position: fixed;
+
+    right: 18px;
+
+    bottom: 20px;
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 50%;
+
+    border: 2px solid #e7bb50;
+
+    background: #f5cc67;
+
+    color: #3b080b;
+
+    z-index: 1000;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,.4);
+}
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero-section {
+
+    position: relative;
+
+    background: #250005;
+
+    padding-bottom: 30px;
+}
+
+
+.hero-image-wrapper {
+
+    width: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.hero-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+}
+
+
+/* ==========================================
+   HERO COUNTDOWN
+========================================== */
+
+.hero-countdown {
+
+    position: relative;
+
+    margin: -2px 14px 0;
+
+    padding: 24px 12px 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #37070b,
+            #1c0306
+        );
+
+    border: 1px solid #b98627;
+
+    box-shadow:
+        0 0 30px rgba(0,0,0,.4),
+        inset 0 0 25px rgba(180,130,30,.08);
+}
+
+
+.hero-countdown-title {
+
+    font-family: "Marcellus", serif;
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+
+    color: #fff;
+
+    margin-bottom: 8px;
+}
+
+
+.hero-countdown-title::before,
+.hero-countdown-title::after {
+
+    content: "—";
+
+    color: #d9a93f;
+
+    margin: 0 10px;
+}
+
+
+.hero-date {
+
+    font-family: "Cinzel", serif;
+
+    color: #e6b94b;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+
+/* ==========================================
+   COUNTDOWN
+========================================== */
+
+.countdown-grid {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+}
+
+
+.time-box {
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 12px 4px;
+
+    border: 1px solid #c69b32;
+
+    background:
+        linear-gradient(
+            145deg,
+            #300509,
+            #180204
+        );
+
+    position: relative;
+}
+
+
+.time-box span {
+
+    display: block;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 28px;
+
+    font-weight: 600;
+
+    color: #f1c34f;
+
+    line-height: 1;
+}
+
+
+.time-box small {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: #fff;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+
+.time-heart {
+
+    color: #e5b342;
+
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   WEDDING DAY MESSAGE
+========================================== */
+
+.wedding-day-message {
+
+    display: none;
+
+    margin: 22px auto 0;
+
+    padding: 18px 10px;
+
+    border: 1px solid #d0a13b;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(80,10,15,.8),
+            rgba(30,2,5,.9)
+        );
+}
+
+
+.wedding-day-message.show {
+
+    display: block;
+
+    animation:
+        weddingMessage .8s ease;
+}
+
+
+.message-heart {
+
+    color: #f2c34e;
+
+    font-size: 25px;
+}
+
+
+.arrived-text {
+
+    font-family: "Cinzel", serif;
+
+    font-size: 15px;
+
+    color: #fff;
+
+    letter-spacing: 2px;
+
+    margin-top: 5px;
+}
+
+
+.wedding-day-message h3 {
+
+    font-family: cursive;
+
+    font-size: 30px;
+
+    color: #efbd46;
+
+    margin: 6px 0;
+}
+
+
+.wedding-day-message p {
+
+    color: #f0d178;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+@keyframes weddingMessage {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+}
+
+
+/* ==========================================
+   SCROLL
+========================================== */
+
+.hero-scroll {
+
+    margin-top: 24px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    color: #dcae3d;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.hero-scroll i {
+
+    margin-top: 7px;
+
+    font-size: 18px;
+
+    animation:
+        arrowDown 1.5s infinite;
+}
+
+
+@keyframes arrowDown {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+
+/* ==========================================
+   GENERAL SECTIONS
+========================================== */
+
+section:not(.hero-section) {
+
+    padding: 50px 18px;
+}
+
+
+.main-title {
+
+    font-family: "Cinzel", serif;
+
+    text-align: center;
+
+    color: #e6b84d;
+
+    font-size: 24px;
+
+    margin-bottom: 12px;
+
+    letter-spacing: 1px;
+}
+
+
+.events-intro,
+.family-subtitle {
+
+    text-align: center;
+
+    color: rgba(255,255,255,.7);
+
+    font-size: 13px;
+
+    margin-bottom: 30px;
+}
+
+
+/* ==========================================
+   EVENTS
+========================================== */
+
+.event-card {
+
+    margin-bottom: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #3b090d,
+            #1d0306
+        );
+
+    border: 1px solid
+        rgba(206,158,50,.45);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.3);
+}
+
+
+.event-image-frame {
+
+    height: 250px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #210407;
+}
+
+
+.event-image-frame img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.event-label {
+
+    position: absolute;
+
+    bottom: 15px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    padding: 7px 25px;
+
+    background:
+        rgba(35,3,7,.9);
+
+    border: 1px solid #d6a73b;
+
+    color: #f2c34e;
+
+    font-family: "Cinzel", serif;
+
+    letter-spacing: 2px;
+
+    font-size: 12px;
+}
+
+
+.event-card-content {
+
+    padding: 24px;
+
+    text-align: center;
+}
+
+
+.event-icon {
+
+    font-size: 28px;
+}
+
+
+.event-card h3 {
+
+    font-family: "Marcellus", serif;
+
+    color: #f1c452;
+
+    font-size: 22px;
+
+    margin: 7px 0 12px;
+}
+
+
+.event-date {
+
+    color: #fff;
+
+    font-size: 12px;
+}
+
+
+.event-time {
+
+    color: #e4b64c;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    margin-top: 5px;
+}
+
+
+.gold-text {
+
+    color: #d7a83b;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    margin-top: 14px;
+}
+
+
+/* ==========================================
+   FAMILY
+========================================== */
+
+.family-box {
+
+    text-align: center;
+
+    padding: 25px 18px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid
+        rgba(214,165,56,.5);
+
+    background:
+        rgba(65,8,13,.45);
+
+    border-radius: 12px;
+}
+
+
+.family-box h3 {
+
+    font-family: "Marcellus", serif;
+
+    color: #e5b64b;
+
+    font-size: 17px;
+}
+
+
+.family-name {
+
+    margin: 14px 0;
+
+    line-height: 1.7;
+
+    color: #fff;
+
+    font-size: 14px;
+}
+
+
+.contact-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 20px;
+
+    border-radius: 25px;
+
+    text-decoration: none;
+
+    color: #260207;
+
+    background: #e8b94e;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   SLIDER
+========================================== */
+
+.slider-container {
+
+    position: relative;
+
+    height: 350px;
+
+    border: 1px solid #bd9130;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background: #160204;
+}
+
+
+.slide {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0;
+
+    transition:
+        opacity .6s ease;
+}
+
+
+.slide.active {
+
+    opacity: 1;
+}
+
+
+.slider-btn {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    border: 1px solid #e2b447;
+
+    background:
+        rgba(30,2,5,.75);
+
+    color: #efc04e;
+
+    z-index: 5;
+
+    cursor: pointer;
+}
+
+
+.prev-btn {
+    left: 10px;
+}
+
+
+.next-btn {
+    right: 10px;
+}
+
+
+.slider-dots {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 14px;
+}
+
+
+.slider-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #684e1c;
+
+    cursor: pointer;
+}
+
+
+.active-dot {
+
+    background: #e6b84c;
+}
+
+
+/* ==========================================
+   LIVE WEDDING
+========================================== */
+
+.live-title {
+
+    margin-top: 50px;
+}
+
+
+.live-dot {
+
+    display: inline-block;
+
+    width: 9px;
+
+    height: 9px;
+
+    background: #e33;
+
+    border-radius: 50%;
+
+    margin-right: 7px;
+
+    animation:
+        liveBlink 1s infinite;
+}
+
+
+@keyframes liveBlink {
+
+    50% {
+        opacity: .25;
+    }
+}
+
+
+.live-stream-container {
+
+    overflow: hidden;
+
+    border: 1px solid #b8892d;
+
+    border-radius: 14px;
+
+    background: #210407;
+}
+
+
+.live-video-wrapper {
+
+    position: relative;
+}
+
+
+.live-banner-img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+}
+
+
+.live-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        rgba(0,0,0,.35);
+
+    color: white;
+
+    font-family: "Cinzel", serif;
+
+    letter-spacing: 2px;
+}
+
+
+.live-camera-icon {
+
+    font-size: 35px;
+
+    margin-bottom: 8px;
+}
+
+
+.live-info-bar {
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+
+.status-badge {
+
+    font-size: 12px;
+
+    color: #ddd;
+}
+
+
+.status-badge i {
+
+    color: #777;
+
+    font-size: 8px;
+}
+
+
+.status-badge strong {
+
+    color: #999;
+}
+
+
+.live-subtext {
+
+    color: #d5b96e;
+
+    font-size: 12px;
+
+    margin: 15px 0;
+}
+
+
+.youtube-live-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    background: #d9a33d;
+
+    color: #270307;
+
+    border-radius: 25px;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.youtube-hint {
+
+    font-size: 10px;
+
+    color: #aaa;
+
+    margin-top: 10px;
+}
+
+
+.live-note {
+
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid rgba(255,255,255,.1);
+
+    color: #d5b96e;
+
+    font-size: 11px;
+}
+
+
+/* ==========================================
+   PRE WEDDING
+========================================== */
+
+.pre-title {
+
+    margin-top: 50px;
+}
+
+
+.prewedding-card {
+
+    border: 1px solid #b88a2d;
+
+    background: #280509;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+
+.prewedding-photo {
+
+    height: 230px;
+
+    position: relative;
+}
+
+
+.prewedding-photo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.photo-count {
+
+    position: absolute;
+
+    bottom: 10px;
+
+    right: 10px;
+
+    background:
+        rgba(20,2,5,.8);
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    color: #fff;
+}
+
+
+.prewedding-content {
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+
+.prewedding-content h3 {
+
+    font-family: "Marcellus", serif;
+
+    color: #e8bb51;
+
+    margin-bottom: 8px;
+}
+
+
+.prewedding-content p {
+
+    font-size: 12px;
+
+    color: #ccc;
+
+    line-height: 1.6;
+}
+
+
+.view-memory-btn {
+
+    margin-top: 18px;
+
+    border: 1px solid #d9a83e;
+
+    background: transparent;
+
+    color: #e6b74c;
+
+    padding: 11px 20px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   GALLERY MODAL
+========================================== */
+
+.prewedding-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(10,0,2,.95);
+
+    padding: 15px;
+}
+
+
+.prewedding-modal.active {
+
+    display: flex;
+}
+
+
+.prewedding-modal-content {
+
+    width: 100%;
+
+    max-width: 560px;
+
+    text-align: center;
+
+    position: relative;
+}
+
+
+.prewedding-modal-content h2 {
+
+    font-family: "Cinzel", serif;
+
+    color: #e7b94e;
+}
+
+
+.gallery-subtitle {
+
+    color: #bbb;
+
+    font-size: 12px;
+
+    margin: 8px 0 18px;
+}
+
+
+.close-prewedding {
+
+    position: absolute;
+
+    right: 0;
+
+    top: -5px;
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    border: 1px solid #d4a43c;
+
+    background: #300509;
+
+    color: #e7b94e;
+
+    cursor: pointer;
+}
+
+
+.gallery-viewer {
+
+    height: 55vh;
+
+    max-height: 500px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.gallery-viewer img {
+
+    max-width: 90%;
+
+    max-height: 100%;
+
+    object-fit: contain;
+
+    transition:
+        opacity .2s;
+}
+
+
+.gallery-arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    border: 1px solid #d6a53d;
+
+    background:
+        rgba(20,0,3,.8);
+
+    color: #e7b94e;
+
+    z-index: 3;
+}
+
+
+.gallery-prev {
+    left: 0;
+}
+
+
+.gallery-next {
+    right: 0;
+}
+
+
+.gallery-counter {
+
+    color: #dcb24e;
+
+    margin: 10px;
+}
+
+
+.gallery-thumbnails {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    overflow-x: auto;
+}
+
+
+.thumb {
+
+    width: 55px;
+
+    height: 55px;
+
+    object-fit: cover;
+
+    border: 2px solid transparent;
+
+    cursor: pointer;
+}
+
+
+.active-thumb {
+
+    border-color: #e1b143;
+}
+
+
+/* ==========================================
+   WISHES
+========================================== */
+
+.wish-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.wish-form input,
+.wish-form textarea {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border:
+        1px solid rgba(211,165,61,.5);
+
+    border-radius: 8px;
+
+    background: #260407;
+
+    color: #fff;
+
+    outline: none;
+
+    font-family: "Poppins", sans-serif;
+}
+
+
+.wish-form textarea {
+
+    resize: vertical;
+}
+
+
+.wish-form button {
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #e2b244;
+
+    color: #270307;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   VENUE
+========================================== */
+
+.venue-name {
+
+    text-align: center;
+
+    color: #e0b247;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+
+.map-box {
+
+    width: 100%;
+
+    height: 300px;
+
+    overflow: hidden;
+
+    border: 1px solid #bb8b2e;
+
+    border-radius: 12px;
+}
+
+
+.map-box iframe {
+
+    width: 100%;
+
+    height: 100%;
+}
+
+
+.directions-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 18px;
+
+    padding: 13px;
+
+    border-radius: 25px;
+
+    background: #e2b244;
+
+    color: #250307;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer-section {
+
+    text-align: center;
+}
+
+
+.alert-box {
+
+    padding: 20px;
+
+    border: 1px solid #b68b31;
+
+    background:
+        rgba(80,20,10,.3);
+
+    border-radius: 12px;
+
+    color: #ddd;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+.alert-box i {
+
+    color: #e6b747;
+
+    margin-right: 5px;
+}
+
+
+.alert-box strong {
+
+    color: #e8b849;
+}
+
+
+.cordly {
+
+    color: #a99778;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+
+.invitee-footer {
+
+    margin-top: 10px;
+
+    color: #dcb047;
+
+    font-family: "Marcellus", serif;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+.footer-note {
+
+    margin-top: 25px;
+
+    color: #ddd;
+
+    font-size: 12px;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+
+
+    .welcome-overlay {
+
+        background-position:
+            center center;
+
+        background-size:
+            cover;
+    }
+
+
+    .welcome-overlay::after {
+
+        inset: 12px;
+    }
+
+
+    .welcome-content {
+
+        padding:
+            25px 15px;
+    }
+
+
+    .god-text {
+
+        font-size: 13px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .website-tag {
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .welcome-couple {
+
+        font-size: 36px;
+    }
+
+
+    .welcome-couple span {
+
+        font-size: 23px;
+    }
+
+
+    .tap-open-btn {
+
+        padding:
+            13px 25px;
+
+        font-size: 12px;
+    }
+
+
+    .hero-countdown {
+
+        margin-left: 8px;
+
+        margin-right: 8px;
+    }
+
+
+    .hero-countdown-title {
+
+        font-size: 16px;
+    }
+
+
+    .hero-countdown-title::before,
+    .hero-countdown-title::after {
+
+        margin: 0 4px;
+    }
+
+
+    .hero-date {
+
+        font-size: 10px;
+    }
+
+
+    .time-box {
+
+        padding:
+            10px 2px;
+    }
+
+
+    .time-box span {
+
+        font-size: 23px;
+    }
+
+
+    .time-box small {
+
+        font-size: 7px;
+    }
+
+
+    .time-heart {
+
+        font-size: 11px;
+    }
+
+
+    .wedding-day-message h3 {
+
+        font-size: 25px;
+    }
+
+
+    .slider-container {
+
+        height: 300px;
+    }
+
+}
