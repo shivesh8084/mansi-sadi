@@ -268,8 +268,11 @@ body {
     letter-spacing: 8px;
 
     margin: 20px 0;
-}
 
+    text-align: center;
+
+    width: 100%;
+}
 
 /* ==========================================
    TAP TO OPEN
