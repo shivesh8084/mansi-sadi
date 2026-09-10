@@ -23,6 +23,150 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
+
+    <!-- FINAL FOOTER FIX -->
+    <style>
+
+        /* ==========================================
+           SPECIAL REQUEST BOX
+        ========================================== */
+
+        .footer-section .alert-box {
+
+            width: 100%;
+            max-width: 520px;
+
+            margin: 0 auto 28px;
+
+            padding: 24px 20px;
+
+            text-align: center;
+
+            line-height: 1.8;
+
+            border: 1px solid #d6a73b;
+
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(70,8,14,.92),
+                    rgba(28,3,7,.96)
+                );
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,.35),
+                inset 0 0 20px rgba(214,167,59,.08);
+
+        }
+
+
+        .footer-section .alert-box i {
+
+            display: block;
+
+            margin-bottom: 10px;
+
+            font-size: 24px;
+
+            color: #e6b84d;
+
+        }
+
+
+        .footer-section .alert-box strong {
+
+            display: block;
+
+            margin-bottom: 10px;
+
+            color: #f1c452;
+
+            font-family: "Cinzel", serif;
+
+            font-size: 14px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        /* ==========================================
+           WARMLY WELCOMES YOU
+        ========================================== */
+
+        .footer-welcome {
+
+            margin: 8px auto 18px;
+
+            text-align: center;
+
+            color: #f1c452;
+
+            font-family: "Cinzel", serif;
+
+            font-size: 22px;
+
+            line-height: 1.5;
+
+            font-weight: 600;
+
+        }
+
+
+        /* ==========================================
+           INVITEE NAMES
+        ========================================== */
+
+        .footer-invitees {
+
+            width: 100%;
+
+            max-width: 520px;
+
+            margin: 0 auto;
+
+            text-align: center;
+
+            color: #fff;
+
+            font-family: "Marcellus", serif;
+
+            font-size: 16px;
+
+            line-height: 1.9;
+
+            font-weight: 400;
+
+        }
+
+
+        .footer-note {
+
+            text-align: center;
+
+        }
+
+
+        /* ==========================================
+           TAP TO OPEN FIX
+        ========================================== */
+
+        #tapOpenBtn {
+
+            position: relative;
+
+            z-index: 10001;
+
+            cursor: pointer;
+
+            pointer-events: auto;
+
+        }
+
+    </style>
+
 </head>
 
 
@@ -38,8 +182,7 @@
 
     <div
         id="welcomeOverlay"
-        class="welcome-overlay"
-        onclick="openInvitation()">
+        class="welcome-overlay">
 
         <!-- Dark overlay -->
         <div class="welcome-dark-overlay"></div>
@@ -78,13 +221,19 @@
             </div>
 
 
-            <div class="tap-open-btn">
+            <!-- TAP TO OPEN -->
+
+            <button
+                type="button"
+                id="tapOpenBtn"
+                class="tap-open-btn"
+                onclick="openInvitation(event)">
 
                 <i class="fa-solid fa-heart"></i>
 
                 TAP TO OPEN
 
-            </div>
+            </button>
 
 
             <p class="tap-hint">
@@ -630,26 +779,12 @@
 
             <div class="live-video-wrapper">
 
-                <img
-                    src="live%20banner.jpeg"
-                    alt="Wedding Live Banner"
-                    class="live-banner-img">
-
-
-                <div class="live-overlay">
-
-                    <div class="live-camera-icon">
-
-                        <i class="fa-solid fa-video"></i>
-
-                    </div>
-
-
-                    <span>
-                        LIVE WEDDING
-                    </span>
-
-                </div>
+                <iframe
+                    src="https://www.youtube.com/embed/crHV8Ly7FI0"
+                    title="Mansi & Dr. Nishu Wedding Live"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
 
             </div>
 
@@ -683,7 +818,7 @@
 
 
                 <a
-                    href="https://www.youtube.com/"
+                    href="https://www.youtube.com/embed/crHV8Ly7FI0"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="youtube-live-btn">
@@ -1023,35 +1158,42 @@
         </h2>
 
 
-       <div class="alert-box">
+        <!-- SPECIAL REQUEST BOX -->
 
+        <div class="alert-box">
 
             <i class="fa-solid fa-triangle-exclamation"></i>
 
             <strong>
-       ⚠️ एक जरूरी सूचना! ⚠️
-
+                ⚠️ एक जरूरी सूचना! ⚠️
             </strong>
 
+            <div>
 
-           शादी में आने के लिए
-कोई बहाना स्वीकार नहीं किया जाएगा। 😜
-“काम है”, “समय नहीं है”,
-“देखते हैं”, “शायद आ पाएँ…”
-ये सब बहाने पहले ही रिजेक्ट हैं! 😂
+                शादी में आने के लिए कोई बहाना स्वीकार नहीं किया जाएगा। 😜
 
+                <br>
 
-            <br>
-            <br>
+                “काम है”, “समय नहीं है”, “देखते हैं”, “शायद आ पाएँ…”
 
+                <br>
 
-आपको आना है,
-खाना है,
-नाचना है 💃🕺
-और दूल्हा-दुल्हन को
-ढेर सारा आशीर्वाद देना है। ❤️
-आप नहीं आए तो शादी की रौनक में
-थोड़ी कमी रह जाएगी!
+                ये सब बहाने पहले ही रिजेक्ट हैं! 😂
+
+                <br>
+                <br>
+
+                आपको आना है, खाना है, नाचना है 💃🕺
+
+                <br>
+
+                और दूल्हा-दुल्हन को ढेर सारा आशीर्वाद देना है। ❤️
+
+                <br>
+
+                आप नहीं आए तो शादी की रौनक में थोड़ी कमी रह जाएगी!
+
+            </div>
 
         </div>
 
@@ -1063,13 +1205,19 @@
 
 
 
-        <p class="cordly">
-            <h2>“Warmly Welcomes You ❤️🫂"</h2>
-        </p>
+        <!-- WARMLY WELCOMES YOU -->
+
+        <div class="footer-welcome">
+
+            “Warmly Welcomes You ❤️🫂”
+
+        </div>
 
 
 
-        <h3 class="invitee-footer">
+        <!-- INVITEE NAMES -->
+
+        <div class="footer-invitees">
 
             Rameshwar Yadav,
             Sunil,
@@ -1082,9 +1230,9 @@
 
             <br>
 
-            & Yadav Parivar (Silkor)
+            &amp; Yadav Parivar (Silkor)
 
-        </h3>
+        </div>
 
 
 
@@ -1100,6 +1248,7 @@
 
 
 </div>
+
 
 
 <!-- JAVASCRIPT -->
