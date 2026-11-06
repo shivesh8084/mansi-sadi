@@ -1,3 +1,4 @@
+
 /* ==========================================
    WEDDING INVITATION JAVASCRIPT
    MANSI & DR. NISHU
@@ -19,19 +20,12 @@ function openInvitation() {
     const icon =
         document.getElementById("musicIcon");
 
+    if (!overlay) return;
 
-    if (!overlay) {
-        return;
-    }
-
-
-    /* Hide welcome screen */
-
+    // Welcome screen hide
     overlay.classList.add("opened");
 
-
-    /* Start music */
-
+    // Music start
     if (music) {
 
         music.play()
@@ -39,22 +33,16 @@ function openInvitation() {
 
                 if (icon) {
 
-                    icon.classList.remove(
-                        "fa-music"
-                    );
+                    icon.classList.remove("fa-music");
 
-                    icon.classList.add(
-                        "fa-volume-high"
-                    );
+                    icon.classList.add("fa-volume-high");
 
                 }
 
             })
             .catch(() => {
 
-                console.log(
-                    "Music requires user interaction."
-                );
+                console.log("Music requires user interaction.");
 
             });
 
@@ -62,53 +50,39 @@ function openInvitation() {
 
 }
 
-
-window.openInvitation =
-    openInvitation;
-
+window.openInvitation = openInvitation;
 
 
 /* ==========================================
    COUNTDOWN
 ========================================== */
 
+// Wedding starts: 26 November 2026
+
 const weddingDate =
-    new Date(
-        "November 26, 2026 00:00:00"
-    ).getTime();
+    new Date("November 26, 2026 00:00:00").getTime();
 
 
 function updateCountdown() {
 
-    const now =
-        new Date().getTime();
+    const now = new Date().getTime();
 
-
-    const distance =
-        weddingDate - now;
-
+    const distance = weddingDate - now;
 
     const daysElement =
         document.getElementById("days");
 
-
     const hoursElement =
         document.getElementById("hours");
-
 
     const minsElement =
         document.getElementById("mins");
 
-
     const secsElement =
         document.getElementById("secs");
 
-
     const weddingMessage =
-        document.getElementById(
-            "weddingDayMessage"
-        );
-
+        document.getElementById("weddingDayMessage");
 
     if (
         !daysElement ||
@@ -116,122 +90,77 @@ function updateCountdown() {
         !minsElement ||
         !secsElement
     ) {
-
         return;
-
     }
 
-
-    /* WEDDING DAY ARRIVED */
+    // WEDDING DAY ARRIVED
 
     if (distance <= 0) {
 
-        daysElement.innerText =
-            "00";
-
-        hoursElement.innerText =
-            "00";
-
-        minsElement.innerText =
-            "00";
-
-        secsElement.innerText =
-            "00";
-
+        daysElement.innerText = "00";
+        hoursElement.innerText = "00";
+        minsElement.innerText = "00";
+        secsElement.innerText = "00";
 
         if (weddingMessage) {
 
-            weddingMessage.classList.add(
-                "show"
-            );
+            weddingMessage.classList.add("show");
 
         }
-
 
         return;
 
     }
 
-
-    /* BEFORE WEDDING DAY */
+    // BEFORE WEDDING DAY
 
     if (weddingMessage) {
 
-        weddingMessage.classList.remove(
-            "show"
-        );
+        weddingMessage.classList.remove("show");
 
     }
 
-
     const days =
         Math.floor(
-            distance /
-            (1000 * 60 * 60 * 24)
+            distance / (1000 * 60 * 60 * 24)
         );
-
 
     const hours =
         Math.floor(
             (
-                distance %
-                (1000 * 60 * 60 * 24)
-            ) /
-            (1000 * 60 * 60)
+                distance % (1000 * 60 * 60 * 24)
+            ) / (1000 * 60 * 60)
         );
-
 
     const mins =
         Math.floor(
             (
-                distance %
-                (1000 * 60 * 60)
-            ) /
-            (1000 * 60)
+                distance % (1000 * 60 * 60)
+            ) / (1000 * 60)
         );
-
 
     const secs =
         Math.floor(
             (
-                distance %
-                (1000 * 60)
-            ) /
-            1000
+                distance % (1000 * 60)
+            ) / 1000
         );
 
-
     daysElement.innerText =
-        days
-            .toString()
-            .padStart(2, "0");
-
+        days.toString().padStart(2, "0");
 
     hoursElement.innerText =
-        hours
-            .toString()
-            .padStart(2, "0");
-
+        hours.toString().padStart(2, "0");
 
     minsElement.innerText =
-        mins
-            .toString()
-            .padStart(2, "0");
-
+        mins.toString().padStart(2, "0");
 
     secsElement.innerText =
-        secs
-            .toString()
-            .padStart(2, "0");
+        secs.toString().padStart(2, "0");
 
 }
 
-
-setInterval(
-    updateCountdown,
-    1000
-);
-
+setInterval(updateCountdown, 1000);
 
 
 /* ==========================================
@@ -246,18 +175,11 @@ function toggleMusic(event) {
 
     }
 
-
     const music =
-        document.getElementById(
-            "bgMusic"
-        );
-
+        document.getElementById("bgMusic");
 
     const icon =
-        document.getElementById(
-            "musicIcon"
-        );
-
+        document.getElementById("musicIcon");
 
     if (!music || !icon) {
 
@@ -265,53 +187,35 @@ function toggleMusic(event) {
 
     }
 
-
     if (music.paused) {
 
         music.play()
             .then(() => {
 
-                icon.classList.remove(
-                    "fa-music"
-                );
+                icon.classList.remove("fa-music");
 
-                icon.classList.add(
-                    "fa-volume-high"
-                );
+                icon.classList.add("fa-volume-high");
 
             })
             .catch(() => {
 
-                console.log(
-                    "Music play error."
-                );
+                console.log("Music play error.");
 
             });
 
-    }
-
-    else {
+    } else {
 
         music.pause();
 
+        icon.classList.remove("fa-volume-high");
 
-        icon.classList.remove(
-            "fa-volume-high"
-        );
-
-
-        icon.classList.add(
-            "fa-music"
-        );
+        icon.classList.add("fa-music");
 
     }
 
 }
 
-
-window.toggleMusic =
-    toggleMusic;
-
+window.toggleMusic = toggleMusic;
 
 
 /* ==========================================
@@ -325,18 +229,14 @@ let sliderTimer;
 
 function getSlides() {
 
-    return document.querySelectorAll(
-        ".slide"
-    );
+    return document.querySelectorAll(".slide");
 
 }
 
 
 function showSlide(index) {
 
-    const slides =
-        getSlides();
-
+    const slides = getSlides();
 
     if (!slides.length) {
 
@@ -344,38 +244,25 @@ function showSlide(index) {
 
     }
 
-
     if (index >= slides.length) {
 
         slideIndex = 0;
 
     }
 
-
     if (index < 0) {
 
-        slideIndex =
-            slides.length - 1;
+        slideIndex = slides.length - 1;
 
     }
 
+    slides.forEach(slide => {
 
-    slides.forEach(
-        slide => {
+        slide.classList.remove("active");
 
-            slide.classList.remove(
-                "active"
-            );
+    });
 
-        }
-    );
-
-
-    slides[slideIndex]
-        .classList.add(
-            "active"
-        );
-
+    slides[slideIndex].classList.add("active");
 
     updateSliderDots();
 
@@ -386,11 +273,7 @@ function changeSlide(direction) {
 
     slideIndex += direction;
 
-
-    showSlide(
-        slideIndex
-    );
-
+    showSlide(slideIndex);
 
     restartSlider();
 
@@ -399,24 +282,15 @@ function changeSlide(direction) {
 
 function restartSlider() {
 
-    clearInterval(
-        sliderTimer
-    );
+    clearInterval(sliderTimer);
 
+    sliderTimer = setInterval(() => {
 
-    sliderTimer =
-        setInterval(
-            () => {
+        slideIndex++;
 
-                slideIndex++;
+        showSlide(slideIndex);
 
-                showSlide(
-                    slideIndex
-                );
-
-            },
-            3500
-        );
+    }, 3500);
 
 }
 
@@ -424,14 +298,9 @@ function restartSlider() {
 function createSliderDots() {
 
     const dotsContainer =
-        document.getElementById(
-            "sliderDots"
-        );
+        document.getElementById("sliderDots");
 
-
-    const slides =
-        getSlides();
-
+    const slides = getSlides();
 
     if (!dotsContainer) {
 
@@ -439,48 +308,28 @@ function createSliderDots() {
 
     }
 
+    dotsContainer.innerHTML = "";
 
-    dotsContainer.innerHTML =
-        "";
+    slides.forEach((slide, index) => {
 
+        const dot =
+            document.createElement("span");
 
-    slides.forEach(
-        (slide, index) => {
+        dot.className = "slider-dot";
 
-            const dot =
-                document.createElement(
-                    "span"
-                );
+        dot.onclick = () => {
 
+            slideIndex = index;
 
-            dot.className =
-                "slider-dot";
+            showSlide(slideIndex);
 
+            restartSlider();
 
-            dot.onclick =
-                () => {
+        };
 
-                    slideIndex =
-                        index;
+        dotsContainer.appendChild(dot);
 
-
-                    showSlide(
-                        slideIndex
-                    );
-
-
-                    restartSlider();
-
-                };
-
-
-            dotsContainer.appendChild(
-                dot
-            );
-
-        }
-    );
-
+    });
 
     updateSliderDots();
 
@@ -490,37 +339,23 @@ function createSliderDots() {
 function updateSliderDots() {
 
     const dots =
-        document.querySelectorAll(
-            ".slider-dot"
-        );
+        document.querySelectorAll(".slider-dot");
 
+    dots.forEach(dot => {
 
-    dots.forEach(
-        dot => {
+        dot.classList.remove("active-dot");
 
-            dot.classList.remove(
-                "active-dot"
-            );
-
-        }
-    );
-
+    });
 
     if (dots[slideIndex]) {
 
-        dots[slideIndex]
-            .classList.add(
-                "active-dot"
-            );
+        dots[slideIndex].classList.add("active-dot");
 
     }
 
 }
 
-
-window.changeSlide =
-    changeSlide;
-
+window.changeSlide = changeSlide;
 
 
 /* ==========================================
@@ -530,29 +365,20 @@ window.changeSlide =
 const galleryImages = [
 
     "photo1.jpeg",
-
     "photo2.jpeg",
-
     "photo3.jpeg",
-
     "photo4.jpeg",
-
     "photo5.jpeg"
 
 ];
 
-
 let galleryIndex = 0;
-
 
 
 function openPreWedding() {
 
     const modal =
-        document.getElementById(
-            "preWeddingModal"
-        );
-
+        document.getElementById("preWeddingModal");
 
     if (!modal) {
 
@@ -560,32 +386,21 @@ function openPreWedding() {
 
     }
 
-
-    modal.classList.add(
-        "active"
-    );
-
+    modal.classList.add("active");
 
     galleryIndex = 0;
 
-
     updateGallery();
 
-
-    document.body.style.overflow =
-        "hidden";
+    document.body.style.overflow = "hidden";
 
 }
-
 
 
 function closePreWedding() {
 
     const modal =
-        document.getElementById(
-            "preWeddingModal"
-        );
-
+        document.getElementById("preWeddingModal");
 
     if (!modal) {
 
@@ -593,38 +408,23 @@ function closePreWedding() {
 
     }
 
+    modal.classList.remove("active");
 
-    modal.classList.remove(
-        "active"
-    );
-
-
-    document.body.style.overflow =
-        "";
+    document.body.style.overflow = "";
 
 }
-
 
 
 function updateGallery() {
 
     const image =
-        document.getElementById(
-            "galleryMainImage"
-        );
-
+        document.getElementById("galleryMainImage");
 
     const counter =
-        document.getElementById(
-            "galleryCounter"
-        );
-
+        document.getElementById("galleryCounter");
 
     const thumbnails =
-        document.querySelectorAll(
-            ".thumb"
-        );
-
+        document.querySelectorAll(".thumb");
 
     if (!image || !counter) {
 
@@ -632,87 +432,53 @@ function updateGallery() {
 
     }
 
+    image.style.opacity = "0";
 
-    image.style.opacity =
-        "0";
+    image.onload = () => {
 
+        image.style.opacity = "1";
 
-    setTimeout(
-        () => {
+    };
 
-            image.src =
-                galleryImages[
-                    galleryIndex
-                ];
-
-
-            image.style.opacity =
-                "1";
-
-        },
-        120
-    );
-
+    image.src = galleryImages[galleryIndex];
 
     counter.innerText =
         `${galleryIndex + 1} / ${galleryImages.length}`;
 
+    thumbnails.forEach(thumb => {
 
-    thumbnails.forEach(
-        thumb => {
+        thumb.classList.remove("active-thumb");
 
-            thumb.classList.remove(
-                "active-thumb"
-            );
-
-        }
-    );
-
+    });
 
     if (thumbnails[galleryIndex]) {
 
-        thumbnails[galleryIndex]
-            .classList.add(
-                "active-thumb"
-            );
+        thumbnails[galleryIndex].classList.add("active-thumb");
 
     }
 
 }
-
 
 
 function changeGallery(direction) {
 
-    galleryIndex +=
-        direction;
+    galleryIndex += direction;
 
+    if (galleryIndex >= galleryImages.length) {
 
-    if (
-        galleryIndex >=
-        galleryImages.length
-    ) {
-
-        galleryIndex =
-            0;
+        galleryIndex = 0;
 
     }
 
+    if (galleryIndex < 0) {
 
-    if (
-        galleryIndex < 0
-    ) {
-
-        galleryIndex =
-            galleryImages.length - 1;
+        galleryIndex = galleryImages.length - 1;
 
     }
-
 
     updateGallery();
 
 }
-
 
 
 function selectGallery(index) {
@@ -726,80 +492,56 @@ function selectGallery(index) {
 
     }
 
-
-    galleryIndex =
-        index;
-
+    galleryIndex = index;
 
     updateGallery();
 
 }
 
 
-window.openPreWedding =
-    openPreWedding;
+window.openPreWedding = openPreWedding;
 
+window.closePreWedding = closePreWedding;
 
-window.closePreWedding =
-    closePreWedding;
+window.changeGallery = changeGallery;
 
-
-window.changeGallery =
-    changeGallery;
-
-
-window.selectGallery =
-    selectGallery;
-
+window.selectGallery = selectGallery;
 
 
 /* ==========================================
    MODAL OUTSIDE CLICK
 ========================================== */
 
-document.addEventListener(
-    "click",
-    function(event) {
+document.addEventListener("click", function(event) {
 
-        const modal =
-            document.getElementById(
-                "preWeddingModal"
-            );
+    const modal =
+        document.getElementById("preWeddingModal");
 
+    if (
+        modal &&
+        event.target === modal
+    ) {
 
-        if (
-            modal &&
-            event.target === modal
-        ) {
-
-            closePreWedding();
-
-        }
+        closePreWedding();
 
     }
-);
 
+});
 
 
 /* ==========================================
    ESC KEY
 ========================================== */
 
-document.addEventListener(
-    "keydown",
-    function(event) {
+document.addEventListener("keydown", function(event) {
 
-        if (
-            event.key === "Escape"
-        ) {
+    if (event.key === "Escape") {
 
-            closePreWedding();
-
-        }
+        closePreWedding();
 
     }
-);
 
+});
 
 
 /* ==========================================
@@ -811,92 +553,62 @@ let touchStartX = 0;
 let touchEndX = 0;
 
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function() {
+document.addEventListener("DOMContentLoaded", function() {
 
-        const galleryViewer =
-            document.querySelector(
-                ".gallery-viewer"
-            );
+    const galleryViewer =
+        document.querySelector(".gallery-viewer");
 
-
-        if (!galleryViewer) {
-
-            return;
-
-        }
-
-
-        galleryViewer.addEventListener(
-            "touchstart",
-            function(event) {
-
-                touchStartX =
-                    event
-                        .changedTouches[0]
-                        .screenX;
-
-            },
-            {
-                passive: true
-            }
-        );
-
-
-        galleryViewer.addEventListener(
-            "touchend",
-            function(event) {
-
-                touchEndX =
-                    event
-                        .changedTouches[0]
-                        .screenX;
-
-
-                handleSwipe();
-
-            },
-            {
-                passive: true
-            }
-        );
-
-    }
-);
-
-
-
-function handleSwipe() {
-
-    const difference =
-        touchStartX -
-        touchEndX;
-
-
-    if (
-        Math.abs(difference) < 40
-    ) {
+    if (!galleryViewer) {
 
         return;
 
     }
 
+    galleryViewer.addEventListener("touchstart", function(event) {
+
+        touchStartX =
+            event.changedTouches[0].screenX;
+
+    }, {
+        passive: true
+    });
+
+    galleryViewer.addEventListener("touchend", function(event) {
+
+        touchEndX =
+            event.changedTouches[0].screenX;
+
+        handleSwipe();
+
+    }, {
+        passive: true
+    });
+
+});
+
+
+function handleSwipe() {
+
+    const difference =
+        touchStartX - touchEndX;
+
+    if (Math.abs(difference) < 40) {
+
+        return;
+
+    }
 
     if (difference > 0) {
 
         changeGallery(1);
 
-    }
-
-    else {
+    } else {
 
         changeGallery(-1);
 
     }
 
 }
-
 
 
 /* ==========================================
@@ -907,37 +619,16 @@ function sendToWhatsApp(event) {
 
     event.preventDefault();
 
-
     const name =
-        document
-            .getElementById(
-                "wishName"
-            )
-            .value
-            .trim();
-
+        document.getElementById("wishName").value.trim();
 
     const phone =
-        document
-            .getElementById(
-                "wishPhone"
-            )
-            .value
-            .trim();
-
+        document.getElementById("wishPhone").value.trim();
 
     const message =
-        document
-            .getElementById(
-                "wishMessage"
-            )
-            .value
-            .trim();
+        document.getElementById("wishMessage").value.trim();
 
-
-    const targetNumber =
-        "918084296708";
-
+    const targetNumber = "918084296708";
 
     const whatsappMessage =
 
@@ -953,100 +644,63 @@ ${message}
 Mansi ❤️ Dr. Nishu
 26th November 2026`;
 
-
     const whatsappUrl =
-
         `https://wa.me/${targetNumber}?text=` +
+        encodeURIComponent(whatsappMessage);
 
-        encodeURIComponent(
-            whatsappMessage
-        );
-
-
-    window.open(
-        whatsappUrl,
-        "_blank"
-    );
+    window.open(whatsappUrl, "_blank");
 
 }
 
-
-window.sendToWhatsApp =
-    sendToWhatsApp;
-
+window.sendToWhatsApp = sendToWhatsApp;
 
 
 /* ==========================================
-   YOUTUBE CHANNEL
+   YOUTUBE LIVE WEDDING
 ========================================== */
 
-/*
-   ABHI CHANNEL URL NAHI DIYA GAYA HAI.
-
-   Jab aap apna YouTube channel URL denge,
-   sirf neeche wali line me URL paste karna hai.
-
-   Example:
-
-   const WEDDING_CHANNEL_URL =
-       "https://www.youtube.com/@YourChannel";
-*/
-
-const WEDDING_CHANNEL_URL =
-    "YOUR_YOUTUBE_CHANNEL_URL_HERE";
-
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function() {
-
-        const youtubeButton =
-            document.querySelector(
-                ".youtube-live-btn"
-            );
-
-
-        if (
-            youtubeButton &&
-            WEDDING_CHANNEL_URL !==
-            "YOUR_YOUTUBE_CHANNEL_URL_HERE"
-        ) {
-
-            youtubeButton.href =
-                WEDDING_CHANNEL_URL;
-
-        }
-
-    }
-);
-
+const WEDDING_LIVE_URL =
+    "https://www.youtube.com/watch?v=crHV8Ly7FI0";
 
 
 /* ==========================================
    PAGE LOAD
 ========================================== */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function() {
+document.addEventListener("DOMContentLoaded", function() {
 
-        /* Slider */
+    // YouTube Live button
 
-        createSliderDots();
+    const youtubeButton =
+        document.querySelector(".youtube-live-btn");
 
-        showSlide(0);
+    if (youtubeButton) {
 
-        restartSlider();
+        youtubeButton.href = WEDDING_LIVE_URL;
 
+        youtubeButton.target = "_blank";
 
-        /* Gallery */
-
-        updateGallery();
-
-
-        /* Countdown */
-
-        updateCountdown();
+        youtubeButton.rel = "noopener noreferrer";
 
     }
-);
+
+
+    // Slider
+
+    createSliderDots();
+
+    showSlide(0);
+
+    restartSlider();
+
+
+    // Gallery
+
+    updateGallery();
+
+
+    // Countdown
+
+    updateCountdown();
+
+});
