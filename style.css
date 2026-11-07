@@ -2469,3 +2469,22 @@ body {
     object-fit: contain !important;
     object-position: center !important;
 }
+
+/* WEDDING IMAGE CENTER FIX */
+.wedding-card .event-image-frame {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: 300px !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+}
+
+.wedding-card .event-image-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    display: block !important;
+}
