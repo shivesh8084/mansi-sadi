@@ -2432,3 +2432,8 @@ body {
 .haldi-card .event-label {
     display: none !important;
 }
+
+/* REMOVE MEHENDI LABEL BOX */
+.mehendi-card .event-label {
+    display: none !important;
+}
