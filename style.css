@@ -2353,3 +2353,43 @@ body {
     }
 
 }
+/* ==========================================
+   FINAL UPDATE - MANSI & DR. NISHU
+   COUNTDOWN BACKGROUND + EVENTS STAR CENTER
+========================================== */
+
+/* Countdown ka background hero ke saath blend rahega */
+.hero-section {
+    background: #250005 !important;
+}
+
+.hero-countdown {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+.hero-countdown::before,
+.hero-countdown::after {
+    display: none !important;
+    content: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.hero-countdown .countdown-decoration {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* Wedding Events ke upar wala star center mein */
+.events-section > .ornament {
+    display: block !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
