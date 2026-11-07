@@ -2488,3 +2488,17 @@ body {
     object-position: center center !important;
     display: block !important;
 }
+
+/* REMOVE WEDDING BANNER BORDER */
+.wedding-card .event-image-frame,
+.wedding-card .event-image-frame img {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.wedding-card .event-image-frame::before,
+.wedding-card .event-image-frame::after {
+    display: none !important;
+    content: none !important;
+}
