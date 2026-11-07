@@ -2415,3 +2415,20 @@ body {
 .hero-countdown .time-box .label {
     font-size: 12px !important;
 }
+
+/* HALDI CARD FIX */
+.haldi-card {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.haldi-card .event-image-frame {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.haldi-card .event-label {
+    display: none !important;
+}
