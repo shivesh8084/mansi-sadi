@@ -2438,14 +2438,34 @@ body {
     display: none !important;
 }
 
-/* WEDDING BANNER FIX */
+
+/* WEDDING CEREMONY BANNER FIX */
 .wedding-card .event-label {
     display: none !important;
 }
 
+.wedding-card .event-image-frame {
+    height: auto !important;
+    min-height: 220px !important;
+    overflow: hidden !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
 .wedding-card .event-image-frame img {
+    display: block !important;
     width: 100% !important;
-    height: 100% !important;
+    height: auto !important;
+    max-height: 350px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
+.wedding-card {
+    height: auto !important;
+    overflow: visible !important;
+}
+
     object-fit: contain !important;
     object-position: center !important;
 }
