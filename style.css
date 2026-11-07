@@ -2393,3 +2393,25 @@ body {
     margin-right: auto !important;
     text-align: center !important;
 }
+/* COUNTDOWN SIZE INCREASE */
+
+.hero-countdown {
+    transform: scale(1.08);
+    transform-origin: center center;
+    margin-top: 20px !important;
+    margin-bottom: 25px !important;
+}
+
+.hero-countdown .time-box {
+    min-width: 65px !important;
+    min-height: 65px !important;
+    padding: 12px !important;
+}
+
+.hero-countdown .time-box .number {
+    font-size: 30px !important;
+}
+
+.hero-countdown .time-box .label {
+    font-size: 12px !important;
+}
