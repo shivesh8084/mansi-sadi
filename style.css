@@ -2332,7 +2332,6 @@ body {
 
 /* पुराना लाइव बैनर और ओवरले छिपाएँ */
 
-.live-banner-img,
 .live-overlay {
     display: none !important;
 }
@@ -2528,4 +2527,23 @@ body {
     align-items: center;
     z-index: 2;
     pointer-events: none;
+}
+/* LIVE BANNER IMAGE FINAL FIX */
+
+.live-video-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    overflow: hidden !important;
+    background: #180006;
+}
+
+.live-video-wrapper .live-banner-img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
 }
