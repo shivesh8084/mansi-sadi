@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,8 +85,6 @@
 
     <!-- HERO SECTION -->
     <section class="hero-section">
-
-        <!-- POST OPEN WEDDING DESIGN -->
 
         <!-- ORIGINAL TOP DECORATION -->
         <div class="countdown-decoration top-decoration">
@@ -424,23 +422,33 @@
 
         <div class="live-stream-container">
 
-            <div class="live-video-wrapper">
+            <div
+                class="live-video-wrapper"
+                style="
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                    min-height: 0;
+                    aspect-ratio: 16 / 9;
+                    overflow: hidden;
+                    background: #180006;
+                ">
 
                 <!-- LIVE WEDDING BANNER IMAGE -->
                 <img
                     src="https://raw.githubusercontent.com/shivesh8084/mansi-sadi/main/live%20banner.jpeg"
                     alt="Mansi and Dr. Nishu Wedding Live Banner"
-                    class="live-banner-img">
-
-                <div class="live-overlay">
-
-                    <div class="live-camera-icon">
-                        <i class="fa-solid fa-video"></i>
-                    </div>
-
-                    <span>LIVE WEDDING</span>
-
-                </div>
+                    class="live-banner-img"
+                    style="
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        max-width: 100%;
+                        object-fit: contain;
+                        object-position: center;
+                    "
+                    onerror="this.onerror=null; this.src='live banner.jpeg';">
 
             </div>
 
@@ -477,7 +485,7 @@
                 </a>
 
                 <p class="youtube-hint">
-                    Tap the YouTube button to watch our wedding live
+                    Tap the YouTube button to open the live wedding
                 </p>
 
                 <div class="live-note">
@@ -808,4 +816,3 @@
 
 </body>
 </html>
-```
