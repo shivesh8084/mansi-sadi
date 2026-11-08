@@ -2529,3 +2529,85 @@ body {
     z-index: 2;
     pointer-events: none;
 }
+```css
+/* LIVE WEDDING SECTION */
+.live-wedding-section {
+    width: 100%;
+    text-align: center;
+}
+
+.live-stream-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.live-video-wrapper {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: #160006;
+    border-radius: 12px;
+}
+
+.live-banner-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border: none;
+}
+
+.live-info-bar {
+    padding: 18px 12px;
+    text-align: center;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    background: #333;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 13px;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    background: #999;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.live-status p {
+    color: #fff;
+    margin: 12px 0 5px;
+}
+
+.live-status .live-date {
+    color: #e7c16b;
+    font-weight: bold;
+}
+
+.youtube-live-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 12px 22px;
+    background: #e60000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.youtube-live-btn:hover {
+    background: #b80000;
+}
+```
